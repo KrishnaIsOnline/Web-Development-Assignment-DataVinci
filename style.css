@@ -1,0 +1,148 @@
+body{
+    background-color: white;
+    /* rgb(128, 26, 168, 1); */
+}
+.anim{
+    
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+
+}
+
+
+.anim > h1{
+    opacity: 0;
+    color: rgb(128, 26, 168, 1);
+   
+    animation:  animateText .7s forwards;
+    
+
+
+}
+
+.anim:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(178, 59, 224, 0.596);
+    animation: showText .8s ease;
+
+
+}
+
+@keyframes animateText {
+    
+
+    from{
+        opacity: 0;
+
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showText {
+    0% {
+        width: 0;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+h1.fall-left{
+    font-size: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98vw;
+    text-align: center;
+}
+
+.grid{
+    margin-left: 4%;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    grid-gap: 20px;
+}
+.grid > article{
+    background-color: #eee5e9;
+    border: none;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    height: 506.69px;
+    transition: transform .3s;
+}
+ 
+.grid >article:hover{
+    transform: translateY(5px);
+    box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grid > article img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.text{
+    padding: 0px 20px 20px;
+
+}
+
+.text h3{
+    text-transform: uppercase;
+
+}
+.text button{
+    background: rgba(178, 59, 224);
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+@media (max-width: 768px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    h1.fall-left{
+        font-size: 25px;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    h1.fall-left{
+        font-size: 25px ;
+    }
+    
+    
+}
+.grid > article{
+    text-align: center;
+}
